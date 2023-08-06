@@ -29,6 +29,7 @@ Available Commands:
   certs         Certificates management
   channels      Channels management
   completion    Generate the autocompletion script for the specified shell
+  config        Store cli params locally
   groups        Groups management
   health        Health Check
   help          Help about any command
@@ -549,4 +550,47 @@ mainflux-cli groups enable <group_id> <user_token>
 
 ```bash
 mainflux-cli groups disable <group_id> <user_token>
+```
+
+## Config
+
+```bash
+mainflux-cli config <parameter> <value>
+```
+
+Response should look like this:
+
+```bash
+  ok 
+```
+
+This command is used to set the flags to be used by CLI in a local TOML file. The default location of the TOML file is near the binaries. To change the location of the TOML file you can run the command:
+
+```
+  mainflux-cli config <parameter> <value> -c "cli/file_name.toml"
+```
+
+
+The possible parameters that can be set using the config command are:
+
+```
+  - bootstrap_url     
+  - certs_url         
+  - http_adapter_url  
+  - msg_content_type 
+  - reader_url        
+  - things_url           
+  - tls_verification    
+  - users_url         
+  - state
+  - status
+  - topic
+  - contact
+  - email
+  - limit
+  - metadata
+  - name
+  - offset
+  - raw_output
+ 
 ```
